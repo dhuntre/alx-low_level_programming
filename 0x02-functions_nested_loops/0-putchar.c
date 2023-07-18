@@ -5,7 +5,7 @@
  */
 int main(void)
 {
-	char c[] = "chakib";
+	char c[] = "chakiblrj";
 	int i;
 
 	for (i = 0; i < 9; i++)
