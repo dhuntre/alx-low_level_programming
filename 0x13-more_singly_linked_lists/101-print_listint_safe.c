@@ -1,28 +1,23 @@
 #include "lists.h"
-#include <stdlib.h>
-#include <stdio.h>
-/**
- * _r -reallocates memory for arrary of pointer
- * to the nodes in a linked list
- * @list: the old list to append
- * @size: size of the new list 
- * @new: new node to add to the list
- * Return: numbre to the new list.
- **/
 
-const listint_t **_r(const listint_t **list, size_t size,const listint_t *new)
+/**
+ * reverse_listint - prints a listint_t linked list.
+ * @head: pointer to the list.
+ * Return: number of nodes in the list.
+ **/
+size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t **newlist;
-	size_t i ;
-	newlist = malloc(size * sizeof(listint_t *));
-	          if (newlist == NULL)
-	{
-		free(list);
+	size_t pichu = 0;
+	const listint_t *aux_node = head;
+
+	if (!head)
 		exit(98);
+
+	while (aux_node)
+	{
+		printf("[%p] %i\n", (void *)aux_node, aux_node->n);
+		aux_node = aux_node->next;
+		pichu++;
 	}
-                  for (i=0 ; i < size - 1 ;i++)
-                newlist[i] = list[i];
-		  newlist[i] = new;
-		  free(list);
-		  return(newlist);
+	return (pichu);
 }
